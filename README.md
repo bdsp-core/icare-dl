@@ -3,4 +3,4 @@ The repository contains the implementation for "Predicting Neurological Outcome 
 
 We develop a multiscale deep neural networks using continuous EEG and admission characteristics from a multicenter cohort of more than 1000 cardiac arrest patients
 
-![Alt text](figures/fig1.tif?raw=true "Title")
+![alt text](/figures/fig1.tif?raw=true "Title")
