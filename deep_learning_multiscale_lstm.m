@@ -1,6 +1,7 @@
 % Multiscale LSTM combining fine-grained short-term dynamics (each 6 h time
 % block) and coarst long-term dynsmics (all past recordings up to now).
 % Wei-Long Zheng, MGH
+% Email: weilonglive@gmail.com
 
 % short term lstms
 clear
