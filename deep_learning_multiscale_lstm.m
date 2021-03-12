@@ -5,8 +5,8 @@
 % short term lstms
 clear
 close all
-load('D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\features\feature_sequences\all_features_sequences.mat')
-save_path = ('D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\deep_learning_results\multi_scale\');
+load('feature_sequences\all_features_sequences.mat')
+save_path = ('multi_scale\');
 for num_neuron = 30
     preds_all = {};
     labels_all = {};
