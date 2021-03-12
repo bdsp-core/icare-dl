@@ -1,3 +1,6 @@
+% Wei-Long Zheng, MGH
+% Email: weilonglive@gmail.com
+
 clear
 feature_hour_folder = '\Features\YNH\';
 feature_folder = '\Features_CNN_IIIC\YNH\';
