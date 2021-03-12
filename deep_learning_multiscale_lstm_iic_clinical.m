@@ -1,12 +1,12 @@
 clear
-pts_info = readtable('Z:\Projects\Weilong\Cardiac_arrest_EEG\ICARE_CaseData_Final_20181108.csv');
+pts_info = readtable('ICARE_CaseData_Final_20181108.csv');
 
 neuron_num_short = 30:10:100;
 neuron_num_long = 30:10:40;
-load(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\long_limitSeq_8_bilstm_two_neurons_',num2str(neuron_num_long(2)),'_epoch_30.mat']);
+load(['long_limitSeq_8_bilstm_two_neurons_',num2str(neuron_num_long(2)),'_epoch_30.mat']);
 pred_probability_long = pred_probability_all{1};
 pts_id_long = pts_id_all{1};
-load(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\short_bilstm_two_neurons_',num2str(neuron_num_short(3)),'_epoch_15.mat']);
+load(['short_bilstm_two_neurons_',num2str(neuron_num_short(3)),'_epoch_15.mat']);
 labels_short = labels_all{1};
 pred_probability_short = pred_probability_all{1};
 pts_id_short = pts_id_all{1};
@@ -115,4 +115,4 @@ for itrial = 1%:10
     net_model_all{itrial} = net_model;
     pts_id_all{itrial} = pts_id_fold;
 end
-save(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\','RF_lstmProb_clinical'],'preds_all','labels_all','pts_id_all','pred_probability_all','net_model_all');
+save(['multiscale-lstm\','RF_lstmProb_clinical'],'preds_all','labels_all','pts_id_all','pred_probability_all','net_model_all');
