@@ -1,8 +1,8 @@
 clear
-feature_hour_folder = 'Z:\Projects\Weilong\Cardiac_arrest_EEG\Features\YNH\';
-feature_folder = 'Z:\Projects\Weilong\Cardiac_arrest_EEG\Features_CNN_IIIC\YNH\';
-save_folder = 'Z:\Projects\Weilong\Cardiac_arrest_EEG\';
-pts_info = readtable('Z:\Projects\Weilong\Cardiac_arrest_EEG\ICARE_CaseData_Final_20181108.csv');
+feature_hour_folder = '\Features\YNH\';
+feature_folder = '\Features_CNN_IIIC\YNH\';
+save_folder = '\';
+pts_info = readtable('ICARE_CaseData_Final_20181108.csv');
 
 list = dir([feature_folder,'*.mat']);
 isfile=~[list.isdir]; 
