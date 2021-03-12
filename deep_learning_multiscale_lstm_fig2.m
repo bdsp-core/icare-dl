@@ -4,13 +4,13 @@ time_step = 6;
 time_range = 12:time_step:96;
 neuron_num_short = 30:10:100;
 neuron_num_long = 30:10:40;
-load(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\combined\RF_clinical_regardless_time']);
+load(['RF_clinical_regardless_time']);
 prob_pts_clinical = prob_pts;
 a = mean(prob_pts_clinical');
 prob_pts_clinical = repmat(a',1,length(time_range));
-load(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\combined\long_limitSeq_8_bilstm_two_neurons_',num2str(neuron_num_long(2)),'_epoch_30.mat']);
+load(['\long_limitSeq_8_bilstm_two_neurons_',num2str(neuron_num_long(2)),'_epoch_30.mat']);
 prob_pts_long = prob_pts;
-load(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\combined\short_bilstm_two_neurons_',num2str(neuron_num_short(3)),'_epoch_15.mat']);
+load(['\short_bilstm_two_neurons_',num2str(neuron_num_short(3)),'_epoch_15.mat']);
 prob_pts_short = prob_pts;
 
 prob_pts = (prob_pts_clinical+prob_pts_long+prob_pts_short)/3;
@@ -56,7 +56,7 @@ colorbar;
 set(gca, 'Xtick',1:11,'Xticklabel',num2cell(time_range(1:11)))
 % set(gca, 'YTick', (1/num_pts:1/num_pts:1)*num_pts, 'YTickLabel', unique_names1)
 
-load('D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\features\all_features.mat','cpc_scores','unique_names');
+load('\all_features.mat','cpc_scores','unique_names');
 cpc_labels = zeros(size(labels));
 
 for i = 1:length(labels)
