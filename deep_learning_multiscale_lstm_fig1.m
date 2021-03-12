@@ -1,7 +1,7 @@
 %% plot roc curves
 clear
 close all
-load('D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\multi-lstm-summary-clinical_avg.mat','mean_curve_all','mean_curve_seperate_all','auc_micro','auc_micro_std','prob_all','label_all');
+load('\multi-lstm-summary-clinical_avg.mat','mean_curve_all','mean_curve_seperate_all','auc_micro','auc_micro_std','prob_all','label_all');
 
 time_step = 6;
 time_range = 12:time_step:72;
@@ -13,9 +13,9 @@ index = find(time_range==time_points);
 auc_micro(index);
 mean_curve = mean_curve_all{index};
 mean_curve_seperate = mean_curve_seperate_all{index};
-ySEM = std(mean_curve_seperate)/sqrt(size(mean_curve_seperate,1));                              % Compute ‘Standard Error Of The Mean’ Of All Experiments At Each Value Of ‘x’
+ySEM = std(mean_curve_seperate)/sqrt(size(mean_curve_seperate,1));                              % Compute â€˜Standard Error Of The Meanâ€™ Of All Experiments At Each Value Of â€˜xâ€™
 CI95 = tinv([0.025 0.975], size(mean_curve_seperate,1)-1);                    % Calculate 95% Probability Intervals Of t-Distribution
-yCI95 = bsxfun(@times, ySEM, CI95(:));              % Calculate 95% Confidence Intervals Of All Experiments At Each Value Of ‘x’
+yCI95 = bsxfun(@times, ySEM, CI95(:));              % Calculate 95% Confidence Intervals Of All Experiments At Each Value Of â€˜xâ€™
 
 % x is a vector, matrix, or any numeric array of data. NaNs are ignored.
 % p is the confidence level (ie, 95 for 95% CI)
