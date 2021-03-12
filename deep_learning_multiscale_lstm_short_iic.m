@@ -5,10 +5,10 @@
 % short term lstms
 clear
 close all
-load('Z:\Projects\Weilong\Cardiac_arrest_EEG\cnn_all_features_sequences.mat')
+load('cnn_all_features_sequences.mat')
 
 %%
-for num_neuron = 30:10:100% 30:10:70 80:10:100
+for num_neuron = 30:10:100
     preds_all = {};
     labels_all = {};
     pred_probability_all = {};
@@ -189,7 +189,7 @@ end
         net_model_all{itrial} = net_model;
         pts_id_all{itrial} = pts_id_fold;
     end
-save(['D:\Research\Cardiac_arrest_EEG\Codes\ComaPrognosticanUsingEEG-master\multiscale-lstm\','short_bilstm_two_neurons_',num2str(num_neuron),'_epoch_',num2str(maxEpochs)],'preds_all','labels_all','pts_id_all','layers','options','pred_probability_all','net_model_all');
+save(['multiscale-lstm\','short_bilstm_two_neurons_',num2str(num_neuron),'_epoch_',num2str(maxEpochs)],'preds_all','labels_all','pts_id_all','layers','options','pred_probability_all','net_model_all');
 end
 
 %[updatedNet,YPred] = predictAndUpdateState(recNet,sequences)
